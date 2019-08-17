@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 // 这是action 的类型 增加、减少
 const ADDTODO = "ADDTODO";
 const DELETETODO = "DELETETODO";
+const aaaaaaa = 111111111111111111111
 let reducer = (state = { list: [] }, action) => {
   // action有两个属性 text type
   if (action === undefined) return state;
@@ -50,6 +51,7 @@ export default class App extends Component {
       type: DELETETODO,
       id
     })
+    
 
   }
   componentWillMount() {
