@@ -5,12 +5,10 @@ import { createStore } from 'redux';
 const ADDTODO = "ADDTODO";
 const DELETETODO = "DELETETODO";
 let reducer = (state = { list: [] }, action) => {
-  debugger
   // action有两个属性 text type
   if (action === undefined) return state;
   switch (action.type) {
     case ADDTODO:
-      debugger
       return { list: [...state.list, { text: action.text, id: Date.now() }] }
     // 解构：把数组解构成元素
     case DELETETODO:
@@ -48,7 +46,6 @@ export default class App extends Component {
     }
   }
   deleteTODO = (id) => {
-    console.log(id)
     store.dispatch({
       type: DELETETODO,
       id
