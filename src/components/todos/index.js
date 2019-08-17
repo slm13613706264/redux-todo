@@ -5,13 +5,13 @@ import {INCREASE, DECREASE} from '../../actions'
 import reducer from '../../reducers/todos'
 
 // 创建一个store
-let store = createStore(reducer);
+import store from "../../store"
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      number: store.getState().number
+      number: store.getState().todos.number
     }
   }
 
@@ -19,7 +19,7 @@ export default class App extends React.Component {
     //subscribe 订阅通过subscribe来订阅store中的状态Setstate来刷新自己的视图
     this.unSubscribe = store.subscribe(() => {
       this.setState({
-        number: store.getState().number
+        number: store.getState().todos.number
       })
     })
   }
